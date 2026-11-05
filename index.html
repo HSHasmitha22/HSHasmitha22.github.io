@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Portfolio of Hasmitha Sargunam, Artificial Intelligence Systems student at the Faculty of Electronics, Vilnius Gediminas Technical University. Projects, skills and CV.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hasmitha Sargunam">
+<meta property="og:description" content="Portfolio of Hasmitha Sargunam, Artificial Intelligence Systems student at the Faculty of Electronics, Vilnius Gediminas Technical University. Projects, skills and CV.">
+<style>html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Hasmitha Sargunam</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Public+Sans:wght@400;500;600&family=Schibsted+Grotesk:wght@500;600;700&display=swap">
+<style>
+/* Layout: a single calm column. The hero shows a SQL query about me, the one detail from a data student's world. */
+:root {
+  --bg: #f5f7fa;
+  --surface: #ffffff;
+  --ink: #0e1a2b;
+  --muted: #55627a;
+  --line: #d9e0ea;
+  --accent: #0a6c74;
+  --accent-ink: #ffffff;
+  --code-bg: #0e1a2b;
+  --code-ink: #d6e2f2;
+  --code-key: #7fd1d8;
+  --code-str: #f2c879;
+  --font-display: "Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Public Sans", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0b1320; --surface: #121c2c; --ink: #e8eef7; --muted: #9aa8bf; --line: #24324a;
+    --accent: #5cc4cc; --accent-ink: #072a2d; --code-bg: #070d17; --code-ink: #d6e2f2;
+    --code-key: #7fd1d8; --code-str: #f2c879;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0b1320; --surface: #121c2c; --ink: #e8eef7; --muted: #9aa8bf; --line: #24324a;
+  --accent: #5cc4cc; --accent-ink: #072a2d; --code-bg: #070d17; --code-ink: #d6e2f2;
+  --code-key: #7fd1d8; --code-str: #f2c879;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: var(--font-body); font-size: 17px; line-height: 1.6;
+  padding-block: 0;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+.wrap { max-width: 880px; margin: 0 auto; }
+h1, h2, h3 { font-family: var(--font-display); line-height: 1.15; text-wrap: balance; margin: 0; }
+p { margin: 0; max-width: 65ch; }
+p + p { margin-top: 14px; }
+
+.top { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding-block: 20px; flex-wrap: wrap; }
+.brand { font-family: var(--font-display); font-weight: 700; font-size: 18px; letter-spacing: -0.01em; }
+.nav { display: flex; gap: 20px; flex-wrap: wrap; font-size: 15px; }
+.nav a { color: var(--muted); text-decoration: none; }
+.nav a:hover { color: var(--accent); }
+
+.hero { display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px; align-items: center; padding-block: 48px 64px; }
+.hero > * { min-width: 0; }
+.eyebrow { font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
+h1 { font-size: clamp(36px, 6.5vw, 56px); font-weight: 700; letter-spacing: -0.025em; }
+.lede { margin-top: 20px; font-size: 19px; color: var(--muted); }
+.cta { display: flex; gap: 12px; margin-top: 28px; flex-wrap: wrap; }
+.btn { display: inline-block; padding: 11px 20px; border-radius: 8px; font-weight: 600; font-size: 15px; text-decoration: none; border: 1.5px solid var(--accent); }
+.btn.primary { background: var(--accent); color: var(--accent-ink); }
+.btn.ghost { color: var(--accent); }
+
+.sql { background: var(--code-bg); color: var(--code-ink); border-radius: 10px; font-family: var(--font-mono); font-size: 13.5px; line-height: 1.65; overflow-x: auto; }
+.sql .bar { display: flex; gap: 6px; padding: 10px 14px; border-bottom: 1px solid rgba(255,255,255,0.08); color: #8091ad; font-size: 12px; }
+.sql pre { margin: 0; padding: 14px 16px 6px; white-space: pre; }
+.sql .k { color: var(--code-key); }
+.sql .s { color: var(--code-str); }
+.sql table { border-collapse: collapse; margin: 6px 16px 16px; font-size: 12.5px; }
+.sql th, .sql td { text-align: left; padding: 3px 18px 3px 0; white-space: nowrap; }
+.sql th { color: #8091ad; font-weight: 500; border-bottom: 1px solid rgba(255,255,255,0.12); }
+
+section { padding-block: 56px; border-top: 1px solid var(--line); }
+h2 { font-size: 28px; letter-spacing: -0.015em; margin-bottom: 28px; }
+.sub { font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--muted); margin: 40px 0 20px; }
+
+.skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 28px 32px; }
+.skills > * { min-width: 0; }
+.skills h3 { font-size: 14px; font-family: var(--font-mono); font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
+.skills ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.skills li { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 4px 11px; font-size: 15px; }
+
+.project { display: grid; grid-template-columns: 150px 1fr; gap: 8px 32px; padding-block: 28px; border-bottom: 1px solid var(--line); }
+.project:first-of-type { padding-top: 0; }
+.project > * { min-width: 0; }
+.meta { font-family: var(--font-mono); font-size: 13px; color: var(--muted); }
+.project h3 { font-size: 21px; margin-bottom: 8px; }
+.project ul { margin: 10px 0 0; padding-left: 20px; max-width: 65ch; }
+.project li + li { margin-top: 4px; }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; font-family: var(--font-mono); font-size: 12.5px; }
+.tags span { color: var(--accent); border: 1px solid var(--line); border-radius: 4px; padding: 2px 8px; }
+.links { margin-top: 12px; font-size: 15px; }
+
+.timeline { display: grid; gap: 28px; }
+.entry { display: grid; grid-template-columns: 150px 1fr; gap: 6px 32px; }
+.entry > * { min-width: 0; }
+.entry h3 { font-size: 19px; }
+.entry .org { color: var(--muted); margin-top: 2px; }
+.entry ul { margin: 10px 0 0; padding-left: 20px; max-width: 65ch; }
+.entry li + li { margin-top: 4px; }
+
+.contact { display: grid; gap: 10px; font-size: 17px; }
+.contact div { display: flex; gap: 16px; flex-wrap: wrap; }
+.contact .label { width: 90px; font-family: var(--font-mono); font-size: 13px; color: var(--muted); padding-top: 3px; }
+.contact span, .contact a { min-width: 0; overflow-wrap: anywhere; }
+
+footer { padding-block: 32px 48px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+
+@media (max-width: 720px) {
+  .hero { grid-template-columns: 1fr; gap: 32px; padding-block: 28px 48px; }
+  .project, .entry { grid-template-columns: 1fr; }
+  section { padding-block: 44px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  a, .btn { transition: color .15s, background-color .15s; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="brand">Hasmitha Sargunam</div>
+    <nav class="nav" aria-label="Sections">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#background">Background</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero">
+      <div>
+        <div class="eyebrow">Faculty of Electronics &middot; Vilnius, Lithuania</div>
+        <h1>Engineering, IT and AI skills with a customer-first mindset.</h1>
+        <p class="lede">Artificial Intelligence Systems student at the Faculty of Electronics, Vilnius Gediminas Technical University. Open to internships and entry-level roles in electronics and electrical engineering, IT, AI and customer support.</p>
+        <div class="cta">
+          <a class="btn primary" href="#projects">See my projects</a>
+          <a class="btn ghost" href="https://www.linkedin.com/in/hasmitha-hs-ab8675323" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn ghost" href="https://github.com/HSHasmitha22" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+      <div class="sql" role="img" aria-label="A SQL query returning my name, field and main tools">
+        <div class="bar">about_me.sql</div>
+<pre><span class="k">SELECT</span> name, studies, tools
+<span class="k">FROM</span>   public.me
+<span class="k">WHERE</span>  open_to_internship = <span class="s">true</span>;</pre>
+        <table>
+          <tr><th>name</th><th>studies</th><th>tools</th></tr>
+          <tr><td>Hasmitha</td><td>AI Systems</td><td>Python, C++, SQL</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <section id="about">
+      <h2>About me</h2>
+      <p>I am an Artificial Intelligence Systems student at the Faculty of Electronics, Vilnius Gediminas Technical University. My studies and projects cover programming, databases, data analysis, machine learning and engineering design, and I have also worked in customer support.</p>
+      <p>This mix lets me move between technical and people-facing work. I can write code in Python or C++, design a database, work with engineering tools such as AutoCAD, SolidWorks and MATLAB, or help a customer solve a problem. I am open to internships and entry-level roles in electronics and electrical engineering, IT, AI and data, and customer support.</p>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="skills">
+        <div>
+          <h3>Programming</h3>
+          <ul><li>Python</li><li>C++</li><li>MATLAB</li><li>HTML</li></ul>
+        </div>
+        <div>
+          <h3>Data and databases</h3>
+          <ul><li>SQL</li><li>Databases</li><li>PostgreSQL</li><li>Data modelling</li><li>Data analysis</li><li>Pandas</li><li>NumPy</li><li>Excel</li><li>Tableau</li></ul>
+        </div>
+        <div>
+          <h3>AI and machine learning</h3>
+          <ul><li>Machine learning fundamentals</li><li>TensorFlow</li><li>Jupyter Notebook</li></ul>
+        </div>
+        <div>
+          <h3>Engineering design</h3>
+          <ul><li>AutoCAD</li><li>SolidWorks</li></ul>
+        </div>
+        <div>
+          <h3>Tools</h3>
+          <ul><li>Git</li><li>GitHub</li></ul>
+        </div>
+        <div>
+          <h3>Customer support</h3>
+          <ul><li>Zendesk</li><li>Freshsales</li><li>CRM tools</li><li>Communication</li><li>Problem solving</li><li>Team collaboration</li></ul>
+        </div>
+        <div>
+          <h3>Languages</h3>
+          <ul><li>English</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+
+      <article class="project">
+        <div class="meta">Full-stack<br>Python &middot; AI</div>
+        <div>
+          <h3>NOUS: AI-powered university platform</h3>
+          <p>A full-stack web platform for students, instructors and administrators. It combines a learning management system with an AI study assistant, study planner, quizzes and exams, attendance and grades, reports, and secure role-based access.</p>
+          <ul>
+            <li>Python FastAPI backend with PostgreSQL, SQLAlchemy models and Alembic migrations.</li>
+            <li>Next.js, React, TypeScript and Tailwind CSS frontend.</li>
+            <li>JWT authentication, tests, a class diagram and full project documentation.</li>
+          </ul>
+          <div class="tags"><span>Python</span><span>FastAPI</span><span>PostgreSQL</span><span>Next.js</span><span>TypeScript</span></div>
+          <div class="links"><a href="https://github.com/HSHasmitha22/NOUS" target="_blank" rel="noopener">View on GitHub</a></div>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="meta">SQL &middot; Python</div>
+        <div>
+          <h3>Sales and Inventory Management System</h3>
+          <p>An end-to-end system that tracks product entries and exits, shelf mapping and stock levels, with automated alerts.</p>
+          <ul>
+            <li>Improved stock turnover efficiency by 15% and reduced overstocking by 20%.</li>
+            <li>Created a process flowchart and reporting views to support decision-making.</li>
+          </ul>
+          <div class="tags"><span>SQL</span><span>Python</span><span>Reporting views</span></div>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="meta">Excel &middot; Tableau</div>
+        <div>
+          <h3>Customer Feedback Analysis Dashboard</h3>
+          <p>A dashboard that analyses more than 500 customer feedback entries and visualises satisfaction trends.</p>
+          <ul>
+            <li>Automated summary reports in Excel, cutting manual reporting time by 30%.</li>
+            <li>Identified the top 3 recurring issues, which helped improve customer response strategies.</li>
+          </ul>
+          <div class="tags"><span>Excel</span><span>Tableau</span><span>Data visualisation</span></div>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="meta">Database design<br>PostgreSQL</div>
+        <div>
+          <h3>Auction House database</h3>
+          <p>A complete logical model written as PostgreSQL DDL with 15 tables in third normal form. It covers participants and their roles, items and ownership history, appraisals, auctions, lots, bids, sales, fees and payments.</p>
+          <p>Constraints do the checking: date-range rules, unique open-period indexes, and a composite foreign key that guarantees a sale's winning bid belongs to the same lot.</p>
+          <div class="tags"><span>PostgreSQL</span><span>3NF</span><span>Constraints</span><span>Indexes</span></div>
+          <div class="links"><a href="https://github.com/HSHasmitha22/DB_HW" target="_blank" rel="noopener">View on GitHub</a></div>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="meta">SQL analysis<br>DVD rental data</div>
+        <div>
+          <h3>DVD rental SQL reports</h3>
+          <p>Eight business questions, such as store revenue after March 2017, top actors by number of films and genre trends by year. Each is solved three ways (JOIN, subquery and CTE), tested, and documented with advantages, drawbacks and the version I would use in production.</p>
+          <div class="tags"><span>JOIN</span><span>Subquery</span><span>CTE</span><span>Query design</span></div>
+        </div>
+      </article>
+    </section>
+
+    <section id="background">
+      <h2>Education and experience</h2>
+
+      <div class="timeline">
+        <div class="entry">
+          <div class="meta">2025 &ndash; 2029</div>
+          <div>
+            <h3>Artificial Intelligence Systems</h3>
+            <div class="org">Faculty of Electronics, Vilnius Gediminas Technical University, Lithuania &middot; GPA 8.9</div>
+            <ul>
+              <li>Building a foundation in Artificial Intelligence, Machine Learning, Data Structures and Algorithms.</li>
+              <li>Developing practical skills in Python, SQL and TensorFlow through hands-on projects, data analysis and system design.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="entry">
+          <div class="meta">Oct 2024 &ndash; Apr 2025</div>
+          <div>
+            <h3>Customer Support Representative</h3>
+            <div class="org">Just Dial, Chennai, India</div>
+            <ul>
+              <li>Managed high-volume calls and used CRM tools to track customer interactions, which improved follow-up rates.</li>
+              <li>Raised customer satisfaction by 30% and reached a 95% first-contact resolution rate.</li>
+              <li>Named Employee of the Month for outstanding performance.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="sub">Certifications</h3>
+      <div class="timeline">
+        <div class="entry">
+          <div class="meta">Certificate</div>
+          <div>
+            <h3>Google Data Analytics Certificate</h3>
+            <div class="org">Data analysis using SQL, Python and Tableau</div>
+          </div>
+        </div>
+        <div class="entry">
+          <div class="meta">Course</div>
+          <div>
+            <h3>Artificial Intelligence</h3>
+            <div class="org">Profenna Technology &middot; modules in Python, Django and TensorFlow</div>
+          </div>
+        </div>
+        <div class="entry">
+          <div class="meta">Workshop</div>
+          <div>
+            <h3>Cybersecurity Workshop</h3>
+            <div class="org">SkillVertex &middot; network security, encryption basics and threat prevention</div>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="sub">Leadership and volunteering</h3>
+      <div class="timeline">
+        <div class="entry">
+          <div class="meta">2025 &ndash; present</div>
+          <div>
+            <h3>Member, Erasmus Student Network</h3>
+            <div class="org">ESN Vilnius, Lithuania</div>
+            <ul>
+              <li>Help organise student activities, events and peer-support initiatives for an international student community.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="entry">
+          <div class="meta">2023</div>
+          <div>
+            <h3>Volunteer, "Say No to Drugs" awareness campaign</h3>
+            <div class="org">India</div>
+            <ul>
+              <li>Ran awareness sessions on responsible decision-making for more than 100 students.</li>
+              <li>Coordinated event logistics with a team of 5 volunteers.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="contact">
+        <div><span class="label">LinkedIn</span><a href="https://www.linkedin.com/in/hasmitha-hs-ab8675323" target="_blank" rel="noopener">linkedin.com/in/hasmitha-hs-ab8675323</a></div>
+        <div><span class="label">GitHub</span><a href="https://github.com/HSHasmitha22" target="_blank" rel="noopener">github.com/HSHasmitha22</a></div>
+        <div><span class="label">Email</span><span>hasmithahs220806@gmail.com</span></div>
+        <div><span class="label">Location</span><span>Vilnius, Lithuania</span></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>&copy; Hasmitha Hariharan Sargunam</footer>
+</div>
+</body>
+</html>
